@@ -1,17 +1,41 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      Checkboxes
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
+
     <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+      <ion-label >是否必填</ion-label>
+      <ion-checkbox [(ngModel)]="cucumber" (ionChange)="updateCucumber()"></ion-checkbox>
     </ion-item>
+    <ion-item>
+      <ion-label>茄子</ion-label>
+      <ion-checkbox [(ngModel)]="qiezi" value="番茄"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>菠菜</ion-label>
+      <ion-checkbox [(ngModel)]="bocai"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>复选</ion-label>
+      <ion-select [(ngModel)]="os" submitText="Okay" cancelText="Nah" multiple="true">
+        <ion-option value="dos">DOS</ion-option>
+        <ion-option value="lunix">Linux</ion-option>
+        <ion-option value="mac7">Mac OS 7</ion-option>
+        <ion-option value="mac8">Mac OS 8</ion-option>
+        <ion-option value="win3.1">Windows 3.1</ion-option>
+        <ion-option value="win95">Windows 95</ion-option>
+        <ion-option value="win98">Windows 98</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button type="submit" full (click)=getFruit(os)>点我提交</button>
   </ion-list>
+
 </ion-content>

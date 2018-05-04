@@ -6,9 +6,17 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'contact.html'
 })
 export class ContactPage {
+  private qiezi:string;
+  private bocai: string;
 
-  constructor(public navCtrl: NavController) {
+  cucumber: boolean;
 
+  updateCucumber() {
+    console.log('Cucumbers new state:' + this.cucumber);
   }
 
+  getFruit(val){
+    console.log(val);
+    
+  }
 }

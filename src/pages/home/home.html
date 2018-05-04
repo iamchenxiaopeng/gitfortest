@@ -1,17 +1,100 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      Selects
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="gender">
+        <ion-option value="f">Female</ion-option>
+        <ion-option value="m">Male</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gaming</ion-label>
+      <ion-select [(ngModel)]="gaming" interface="popover">
+        <ion-option value="nes">NES</ion-option>
+        <ion-option value="n64">Nintendo64</ion-option>
+        <ion-option value="ps">PlayStation</ion-option>
+        <ion-option value="genesis">Sega Genesis</ion-option>
+        <ion-option value="saturn">Sega Saturn</ion-option>
+        <ion-option value="snes">SNES</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Notifications</ion-label>
+      <ion-select [(ngModel)]="notifications" interface="action-sheet">
+        <ion-option value="enable">Enable</ion-option>
+        <ion-option value="mute">Mute</ion-option>
+        <ion-option value="mute_week">Mute for a week</ion-option>
+        <ion-option value="mute_year" (ionSelect)="notificationSelect($event)">Mute for a year</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>复选</ion-label>
+      <ion-select [(ngModel)]="os" submitText="Okay" cancelText="Nah" multiple="true">
+        <ion-option value="dos">DOS</ion-option>
+        <ion-option value="lunix">Linux</ion-option>
+        <ion-option value="mac7">Mac OS 7</ion-option>
+        <ion-option value="mac8">Mac OS 8</ion-option>
+        <ion-option value="win3.1">Windows 3.1</ion-option>
+        <ion-option value="win95">Windows 95</ion-option>
+        <ion-option value="win98">Windows 98</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>点我有惊喜</ion-label>
+      <ion-select [(ngModel)]="music" [selectOptions]="musicAlertOpts">
+        <ion-option (ionSelect)="updateCucumber()">点我有惊喜</ion-option>
+        <ion-option>Green Day</ion-option>
+        <ion-option>Nirvana</ion-option>
+        <ion-option>Pearl Jam</ion-option>
+        <ion-option>Smashing Pumpkins</ion-option>
+        <ion-option>Soundgarden</ion-option>
+        <ion-option (ionSelect)="stpSelect($event)">Stone Temple Pilots</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-select [(ngModel)]="month">
+        <ion-option value="01">一月</ion-option>
+        <ion-option value="02">二月</ion-option>
+        <ion-option value="03">三月</ion-option>
+        <ion-option value="04">四月</ion-option>
+        <ion-option value="05">五月</ion-option>
+        <ion-option value="06">六月</ion-option>
+        <ion-option value="07">七月</ion-option>
+        <ion-option value="08">八月</ion-option>
+        <ion-option value="09">九月</ion-option>
+        <ion-option value="10">十月</ion-option>
+        <ion-option value="11">十一月</ion-option>
+        <ion-option value="12" checked="true">十二月</ion-option>
+      </ion-select>
+      <ion-select [(ngModel)]="year">
+        <ion-option>1989</ion-option>
+        <ion-option>1990</ion-option>
+        <ion-option>1991</ion-option>
+        <ion-option>1992</ion-option>
+        <ion-option>1993</ion-option>
+        <ion-option checked="true">1994</ion-option>
+        <ion-option>1995</ion-option>
+        <ion-option>1996</ion-option>
+        <ion-option>1997</ion-option>
+        <ion-option>1998</ion-option>
+        <ion-option>1999</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <button ion-button full color="secondary" (click)="doMySubmit(os)">点我提交</button>
+  
 </ion-content>
