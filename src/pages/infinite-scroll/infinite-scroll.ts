@@ -31,11 +31,6 @@ export class InfiniteScrollPage {
     {name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},
     {name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},
     {name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},
-    {name:'小明'},{name:'小明'},{name:'小明'},{name:'大明'},{name:'小明'},
-    {name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},
-    {name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},
-    {name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},
-    {name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},
     {name:'少明'},{name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},
     {name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'},{name:'小明'}];
     

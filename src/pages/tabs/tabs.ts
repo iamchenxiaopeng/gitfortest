@@ -5,6 +5,7 @@ import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { SegmentsPage } from '../segments/segments';
 import { InfiniteScrollPage } from '../infinite-scroll/infinite-scroll';
+import { RangePage } from '../range/range';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -16,6 +17,7 @@ export class TabsPage {
   tab3Root = ContactPage;
   segmentsPage = SegmentsPage;
   scrollPage = InfiniteScrollPage;
+  rangePage = RangePage;
 
   constructor() {
 

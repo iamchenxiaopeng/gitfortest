@@ -8,11 +8,34 @@
 
 <ion-content>
 
+    <form (submit)="doSubmit($event)" [formGroup]="langForm">
+        <ion-list radio-group formControlName="langs" (ionChange)="ionC($event)" [(ngModel)]="radioGroupData">
+    
+          <ion-list-header>
+            Language
+          </ion-list-header>
+    
+          <ion-item>
+            <ion-label>Go</ion-label>
+            <ion-radio value="golang" checked="true"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Rust</ion-label>
+            <ion-radio value="rust"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Python</ion-label>
+            <ion-radio value="python"></ion-radio>
+          </ion-item>
+          <button ion-button full type="submit">提交radiogroup</button>
+        </ion-list>
+      </form>
+
   <ion-list>
 
     <ion-item>
       <ion-label >是否必填</ion-label>
-      <ion-checkbox [(ngModel)]="cucumber" (ionChange)="updateCucumber()"></ion-checkbox>
+      <ion-checkbox [(ngModel)]="cucumber" (ionChange)="updateCucumber($event)"></ion-checkbox>
     </ion-item>
     <ion-item>
       <ion-label>茄子</ion-label>

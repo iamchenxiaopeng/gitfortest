@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Directive, HostBinding, HostListener } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { ComponentsModule } from '../../components/components.module';
 
 /**
  * Generated class for the SegmentsPage page.
@@ -13,11 +14,29 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
   selector: 'page-segments',
   templateUrl: 'segments.html',
 })
+@Directive({
+  selector: '[hostBinding]',
+})
 export class SegmentsPage {
   private pet: string = 'puppies';
 
+  @HostBinding('style.color') color: string;
+  // @HostBinding('style') style: any;
+  @HostBinding('style.width') width;
+  @HostListener('click',['$event.target']) onClick(btn: HTMLElement){
+    console.log('hostListener事件已经启动，hostBinding属性已经生效',btn)
+    console.log(this)
+    btn.style.color = 'red';
+    this.width = 200 + 'px';
+  }
+  @HostListener('keyup') onKeyup(){
+    console.log('hostListener事件2已经启动，hostBinding属性已经生效')
+    // this.color = 'red !important';
+    this.width = 300 + 'px';
+  }
 
-  constructor(public alertCtrl: AlertController) {
+  constructor(public alertCtrl: AlertController,
+  ) {
 
   }
   showOptions(){

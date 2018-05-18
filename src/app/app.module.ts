@@ -9,9 +9,13 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SegmentsPage } from '../pages/segments/segments';
 import { InfiniteScrollPage } from '../pages/infinite-scroll/infinite-scroll';
+import { RangePage } from '../pages/range/range';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { ComponentsModule } from '../components/components.module';
+
 
 @NgModule({
   declarations: [
@@ -21,10 +25,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     SegmentsPage,
-    InfiniteScrollPage
+    InfiniteScrollPage,
+    RangePage
   ],
   imports: [
     BrowserModule,
+    ComponentsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -35,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     SegmentsPage,
-    InfiniteScrollPage
+    InfiniteScrollPage,
+    RangePage
   ],
   providers: [
     StatusBar,
